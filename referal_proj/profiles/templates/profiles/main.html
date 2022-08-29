@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+My recs
+{% endblock title %}
+
+{% block content %}
+    <h1>Your points is {{your_points}}</h1>    
+
+{% if my_recs %}
+        <h1>My recommendations:</h1>
+        <ul>
+            {% for profile in my_recs %}
+            <li>{{profile.user}}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <h1>You didnt recommend anyone yet</h1>
+    {% endif %}
+    <a href="{% url 'logout-view' %}">
+        <button class="btn btn-primary">Logout</button>
+    </a>
+{% endblock content %}

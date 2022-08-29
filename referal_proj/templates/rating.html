@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Rating
+{% endblock title %}
+
+{% block content %}
+    {% if ordered %}
+        {% for el in ordered %}
+        <p>User {{el.email}} have {{el.points}} points</p>
+        {% endfor %}
+    {% endif %}
+
+
+{% endblock content %}
